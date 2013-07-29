@@ -1,0 +1,14 @@
+.ladder-head {
+  top    : 0;
+  left   : 0;
+  right  : 0;
+  height : 40px;
+}
+
+.ladder-head-login {
+	top    : 4px;
+    right  : 0;
+    width  : 64px;
+    height : 32px;
+    background : green;
+}
