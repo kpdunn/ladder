@@ -1,18 +1,25 @@
 ladder.model = (function () {
   'use strict';
    
-   var user = (function () {
-    
-    var get_user, login, logout;
+    var get_user, get_is_anon, login, logout;
 
-    get_user = function () { return stateMap.user; };
+	var stateMap = {
+		user : "anon"
+	};
+	
+    get_user = function () { 
+    	return stateMap.user; 
+    };
 
-    login = function(name) {
-    
+    get_is_anon = function() {
+    	stateMap.user == "anon";
+    };
+    	
+    login = function(name) {    
     	stateMap.user = name;
     };
 
-    logout = function () {
+    logout = function (user) {
 
       stateMap.user = stateMap.anon_user;
       
@@ -21,13 +28,10 @@ ladder.model = (function () {
 
     return {
       get_user   : get_user,
+      get_is_anon : get_is_anon,
       login      : login,
       logout     : logout
     };
-  }());
-
-
-  return { user : user };
   
 }());
 

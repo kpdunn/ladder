@@ -2,14 +2,14 @@
 ladder.login_logout = (function () {
 
   onTapAcct = function ( event ) {
-    var acct_text, user_name, user = spa.model.people.get_user();
-    if ( user.get_is_anon() ) {
+    var acct_text, user_name, user = ladder.model.get_user();
+    if ( user == "anon" ) {
       user_name = prompt( 'Please sign-in' );
-      spa.model.people.login( user_name );
+      ladder.model.login( user_name );
       jqueryMap.$acct.text( '... processing ...' );
     }
     else {
-     spa.model.people.logout();
+     ladder.model.logout();
     }
     return false;
   };
@@ -22,4 +22,10 @@ ladder.login_logout = (function () {
     jqueryMap.$acct.text( 'Please sign-in' );
   };
 
+  return {
+  	onTapAcct : onTapAcct,
+  	onLogin	:	onLogin,
+  	onLogout :	onLogout
+  };
+    
 }());
