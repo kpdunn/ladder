@@ -30,7 +30,8 @@ ladder = (function () {
     setJqueryMap();
     jqueryMap.$login_logout
       .text( 'Please sign-in')
-      .bind( 'utap', onTapAcct );
+      .bind( 'utap', onTapAcct )
+      .bind( 'ladder-logout', onLogout);
   	};
   	
   return { initModule : initModule };
