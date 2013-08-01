@@ -34,6 +34,11 @@ ladder = (function () {
       .bind( 'ladder-logout', onLogout);
   	};
   	
-  return { initModule : initModule };
+	getJqueryMap = function() {
+		return jqueryMap;
+	};
+	
+	return { initModule : initModule,
+		     getJqueryMap  : getJqueryMap };
   
 }());
