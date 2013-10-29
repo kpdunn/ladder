@@ -12,3 +12,9 @@
     height : 32px;
     background : green;
 }
+
+.registration-form
+{
+  margin: 0px 20px 0px 20px;
+  display: none;
+}
